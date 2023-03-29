@@ -1,14 +1,10 @@
 pub fn calculation() {
-    let thinking: &str = "...";
-    for i in 1..=30 {
-        if i % 15 == 0 {
-            println!("{}? {} FizzBuzz", i, thinking);
-        } else if i % 3 == 0 {
-            println!("{}! Fizz", i);
-        } else if i % 5 == 0 {
-            println!("{}! Buzz", i);
-        } else {
-            println!("{}", i);
+    for x in 1..=100 {
+        match x {
+            e if e % 15 == 0 => println!("FizzBuzz"),
+            e if e % 3 == 0 => println!("Fizz"),
+            e if e % 5 == 0 => println!("Buzz"),
+            e => println!("{}", e),
         }
     }
 }
