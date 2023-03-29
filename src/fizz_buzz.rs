@@ -1,10 +1,15 @@
 pub fn calculation() {
-    for x in 1..=100 {
-        match x {
-            e if e % 15 == 0 => println!("FizzBuzz"),
-            e if e % 3 == 0 => println!("Fizz"),
-            e if e % 5 == 0 => println!("Buzz"),
-            e => println!("{}", e),
-        }
+    for x in 1..=30 {
+        let tmp;
+        let s = match (x % 3, x % 5) {
+            (0, 0) => "FizzBuzz",
+            (0, _) => "Fizz",
+            (_, 0) => "Buzz",
+            _ => {
+                tmp = x.to_string();
+                &tmp
+            }
+        };
+        println!("{}", s);
     }
 }
