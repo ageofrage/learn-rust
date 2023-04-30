@@ -1,4 +1,4 @@
-pub fn calculation() {
+pub fn calculation(end: usize) {
     struct FizzBuzz<T> {
         div_a: T,
         div_b: T,
@@ -41,7 +41,8 @@ pub fn calculation() {
         }
     }
 
-    (1..=100)
+    (1..)
+        .take(end)
         .map(|x: u32| FizzBuzz::new(3, 5, 0).to_str(x))
         .for_each(|x| println!("{}", x))
 }
